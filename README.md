@@ -66,7 +66,8 @@ sudo apt install tmux
 ```zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-3. If TMUX was already running when installing TPM:
+3. To fetch and install plugins listed in `.tmux.conf`, while in TMUX, press `prefix` + `I`.
+4. If TMUX was already running when installing TPM:
 ```zsh
 tmux source ~/.tmux.conf
 ```
