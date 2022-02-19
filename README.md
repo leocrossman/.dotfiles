@@ -45,7 +45,7 @@ sudo apt-get update sudo apt-get install zsh -y
 ```zsh
 chsh -s $(which zsh)
 ```
-3. Set `$HOME` environment variable to root directory e.g.
+3. Set `$HOME` environment variable if it is not already defined (check with `echo $HOME`) to root directory e.g.
 ```zsh
 echo 'export HOME=home/username' >> ~/.zshenv
 ```
