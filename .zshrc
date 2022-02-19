@@ -93,7 +93,7 @@ zstyle ':omz:update' frequency 13
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # Plugins first -> PATH to oh-my-zsh -> source oh-my-zsh.sh
-plugins=(git command-not-found)
+plugins=(git)
 
 
 source $ZSH/oh-my-zsh.sh
