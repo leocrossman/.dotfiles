@@ -45,7 +45,11 @@ sudo apt-get update sudo apt-get install zsh -y
 ```zsh
 chsh -s $(which zsh)
 ```
-3. Install oh-my-zsh
+3. Set `$HOME` environment variable to root directory e.g.
+```zsh
+echo 'export ENV_VAR=12345' >> ~/.zshenv
+```
+4. Install oh-my-zsh
 ```zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
