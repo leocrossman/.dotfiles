@@ -1,3 +1,4 @@
+# Installs (To be moved to independent install scripts in the future):
 # if oh-my-zsh is not installed, install it
 if [ ! -d $HOME/.oh-my-zsh ] ; then
     echo "No oh-my-zsh installation found. Installing..." >&2
