@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install fortunes fortune-mod cowsay
-
 REQUIRED_PKG="fortune"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG | grep "install ok installed")
 echo Checking for $REQUIRED_PKG: "$PKG_OK"
