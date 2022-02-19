@@ -47,7 +47,7 @@ chsh -s $(which zsh)
 ```
 3. Set `$HOME` environment variable to root directory e.g.
 ```zsh
-echo 'export ENV_VAR=12345' >> ~/.zshenv
+echo 'export HOME=home/username' >> ~/.zshenv
 ```
 4. Install oh-my-zsh
 ```zsh
