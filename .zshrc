@@ -172,6 +172,7 @@ unsetopt LIST_BEEP
 alias myip="curl http://ipecho.net/plain; echo"
 # open file explorer gui
 alias e="explorer.exe ."
+alias vi="vim"
 
 # enter postgres user
 # sudo -u postgres -i
