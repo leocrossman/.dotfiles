@@ -7,7 +7,6 @@
 
 " new (scroll down on stack overflow post to see comment explanation for this method)
 autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' |  clip.exe')
-" --------------- end copy&paste ------------------
 
 " ----------------- turn off bell ------------------
 "turn off bell
@@ -15,4 +14,11 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
-" ----------------- end turn off bell -------------
+
+" ----------------- text formatting ---------------
+set wrap
+set linebreak
+set nolist  " list disables linebreak"
+set textwidth=0
+
+" ----------------- 
