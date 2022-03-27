@@ -132,7 +132,7 @@ source $ZSH/oh-my-zsh.sh
 
 # set default editor
 # export EDITOR="code -w" # vscode
-export EDITOR="vim" # vim
+export EDITOR="nvim" # vim
 
 # fix_wsl2_interop() {
 #    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do

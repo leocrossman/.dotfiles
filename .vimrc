@@ -38,6 +38,7 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
 set signcolumn=yes
+"set guicursor=i:block
 
 " give more space for displaying messages
 set cmdheight=2
