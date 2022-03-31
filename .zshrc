@@ -13,7 +13,7 @@ fi
 
 # Install scripts - installs only if not found
 # Changes permissions to be executable
-chmod +x ~/.dotfiles/scripts/install_fortune.sh
+chmod +x ~/.dotfiles/scripts/bash/install_fortune.sh
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -132,8 +132,8 @@ source $ZSH/oh-my-zsh.sh
 
 # set default editor
 # export EDITOR="code -w" # vscode
-export EDITOR="nvim" # vim
-
+export EDITOR="vi" # vi
+alias v="nvim"
 # fix_wsl2_interop() {
 #    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
 #         if [[ -e "/run/WSL/${i}_interop" ]]; then
@@ -151,7 +151,6 @@ export EDITOR="nvim" # vim
 # echo $ZSH_THEME
 fortune | cowsay  -f "$(ls /usr/share/cowsay/cows | sort -R | head -1)" | lolcat
 
-# Turn off all beeps
 unsetopt BEEP
 # Turn off autocomplete beeps
 unsetopt LIST_BEEP
@@ -191,7 +190,13 @@ alias mstart="sudo service mongod start"
 alias mstop="sudo service mongod stop"
 
 alias c="clear"
+alias n="nvim"
+alias so="source .zshrc"
 
+# color stuff
+# alias show_colors="zsh ~/.dotfiles/scripts/zsh/display_terminal_colors.zsh"
+d=.dircolors
+test -r $d && eval "$(dircolors $d)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

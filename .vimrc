@@ -1,4 +1,3 @@
-autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' |  clip.exe')
 
 set noerrorbells visualbell t_vb=
 if has('autocmd')
@@ -26,7 +25,7 @@ set hidden
 set noerrorbells
 set expandtab
 set smartindent
-set nowrap
+"set nowrap
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -48,3 +47,4 @@ set updatetime=50
 
 " dont pass messages to |ins-completion-menu|
 set shortmess+=c
+

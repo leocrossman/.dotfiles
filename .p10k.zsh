@@ -276,7 +276,7 @@
   # opening a directory in the file manager simply by clicking the link.
   # Can also be handy when the directory is shortened, as it allows you to see
   # the full directory that was used in previous commands.
-  typeset -g POWERLEVEL9K_DIR_HYPERLINK=true #false
+  typeset -g POWERLEVEL9K_DIR_HYPERLINK=false #false
 
   # Enable special styling for non-writable directories. See POWERLEVEL9K_LOCK_ICON and
   # POWERLEVEL9K_DIR_CLASSES below.
@@ -375,7 +375,7 @@
       local       meta='%f'   # default foreground
       local      clean='%2F'  # green foreground
       local   modified='%3F'  # yellow foreground
-      local  untracked='%4F'  # blue foreground
+      local  untracked='%133F'  # blue foreground - 132, 134 -> good
       local conflicted='%1F'  # red foreground
     else
       # Styling for incomplete and stale Git status.
@@ -1602,7 +1602,7 @@
   #   - verbose: Enable instant prompt and print a warning when detecting console output during
   #              zsh initialization. Choose this if you've never tried instant prompt, haven't
   #              seen the warning, or if you are unsure what this all means.
-  typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
   # Hot reload allows you to change POWERLEVEL9K options after Powerlevel10k has been initialized.
   # For example, you can type POWERLEVEL9K_BACKGROUND=red and see your prompt turn red. Hot reload
