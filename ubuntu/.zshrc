@@ -13,7 +13,7 @@ fi
 
 # Install scripts - installs only if not found
 # Changes permissions to be executable
-chmod +x ~/.dotfiles/scripts/bash/install_fortune.sh
+#chmod +x ~/.dotfiles/scripts/ubuntu/bash/install_fortune.sh
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -194,7 +194,7 @@ alias n="nvim"
 alias so="source .zshrc"
 
 # color stuff
-# alias show_colors="zsh ~/.dotfiles/scripts/zsh/display_terminal_colors.zsh"
+# alias show_colors="zsh ~/.dotfiles/ubuntu/scripts/zsh/display_terminal_colors.zsh"
 d=.dircolors
 test -r $d && eval "$(dircolors $d)"
 
