@@ -12,8 +12,14 @@ Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Javascript/Typescript
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript' " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+Plug 'leafgarland/typescript-vim' " Syntax file and other settings for TypeScript.
+Plug 'yuezk/vim-js' " A Vim syntax highlighting plugin for JavaScript and Flow.js
+Plug 'maxmellon/vim-jsx-pretty' " The React syntax highlighting and indenting plugin for vim. Also supports the typescript tsx file.
+Plug 'mattn/emmet-vim' " provides support for expanding abbreviations.
+Plug 'moll/vim-node' " provides node support in vim
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " Styled components support
+Plug 'jparise/vim-graphql' "GraphQL file detection, syntax highlighting, and indentation.
 
 " Plebvim lsp Plugins
 Plug 'neovim/nvim-lspconfig'
@@ -99,7 +105,18 @@ Plug 'preservim/nerdcommenter'
 
 " codi (quokka equivalent)
 Plug 'metakirby5/codi.vim'
+
+" code spellcheck
+Plug 'kamykn/spelunker.vim'
+
+" Jump to any location specified by two characters.
+Plug 'justinmk/vim-sneak'
+
+Plug 'sickill/vim-monokai'
+Plug 'ackyshake/Spacegray.vim'
 call plug#end()
+
+
 
 
 " Nice menu when typing `:find *.py`
@@ -114,9 +131,13 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
+set background=dark
 "colorscheme dracula
-"colorscheme gruvbox-baby
-colorscheme gruvbox
+colorscheme gruvbox-baby
+"colorscheme gruvbox
+"colorscheme monokai
+"colorscheme spacegray
+
 
 "highlight Normal guibg=none
 set clipboard+=unnamedplus
@@ -129,6 +150,8 @@ nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <Leader>= :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>[ :resize +5<CR>
+nnoremap <Leader>' :resize -5<CR>
 nnoremap <Leader>rp :resize 100<CR>
 nnoremap <Leader>nf :Neoformat<CR>
 nnoremap <C-Left> :tabprevious<CR>                                                                            
@@ -296,4 +319,9 @@ syntax on
 filetype on
 filetype plugin on
 
-
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=Gray
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
