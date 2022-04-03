@@ -114,6 +114,9 @@ Plug 'justinmk/vim-sneak'
 
 Plug 'sickill/vim-monokai'
 Plug 'ackyshake/Spacegray.vim'
+
+Plug 'qxxxb/vim-searchhi'
+Plug 'haya14busa/vim-asterisk'
 call plug#end()
 
 
@@ -250,9 +253,9 @@ endif
 if has ('autocmd')
   " at the start of each group delete all autocmds inside the current augroup everytime we source rc files
   "augroup vimrc
-  "  autocmd!  
-  "  autocmd bufwritepost .vimrc source ".vimrc" | redraw!
-  "  autocmd bufwritepost init.vim source $MYVIMRC | redraw!
+    "autocmd!  
+    "autocmd bufwritepost .vimrc source ".vimrc" | redraw!
+    "autocmd bufwritepost init.vim source $MYVIMRC | redraw!
   "augroup END
 
   augroup zshrc
@@ -292,8 +295,23 @@ if has ('autocmd')
 
   augroup cocGroup
     " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-  augroup end
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+  augroup END
+
+  augroup PatchDiffHighlightGroup
+    autocmd!
+    autocmd FileType diff syntax enable
+  augroup END
+
+  augroup NoSimultaneousEdits
+    autocmd!
+    autocmd SwapExists * let v:swapchoice = 'o'
+    autocmd SwapExists * echomsg ErrorMsg
+    autocmd SwapExists * echo 'Duplicate edit session (readonly)'
+    autocmd SwapExists * echohl None
+  augroup END
+
+
 endif
 
 set autochdir
@@ -314,14 +332,67 @@ let g:neoformat_try_node_exe = 1
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
 
+" Vim searchhi
+nmap n <Plug>(searchhi-n)
+nmap N <Plug>(searchhi-N)
+" nmap gd <Plug>(searchhi-gd)" already used by coc
+nmap gD <Plug>(searchhi-gD)
 
-syntax on
-filetype on
-filetype plugin on
+map * <Plug>(asterisk-*)<Plug>(searchhi-update)
+map # <Plug>(asterisk-#)<Plug>(searchhi-update)
+map g* <Plug>(asterisk-g*)<Plug>(searchhi-update)
+map g# <Plug>(asterisk-g#)<Plug>(searchhi-update)
 
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=Gray
+map z* <Plug>(asterisk-z*)<Plug>(searchhi-update)
+map z# <Plug>(asterisk-z#)<Plug>(searchhi-update)
+map gz* <Plug>(asterisk-gz*)<Plug>(searchhi-update)
+map gz# <Plug>(asterisk-gz#)<Plug>(searchhi-update)
+
+vmap n <Plug>(searchhi-v-n)
+vmap N <Plug>(searchhi-v-N)
+" vmap gd <Plug>(searchhi-v-gd) already used by coc
+vmap gD <Plug>(searchhi-v-gD)
+
+nmap <silent> <C-L> <Plug>(searchhi-clear-all)
+vmap <silent> <C-L> <Plug>(searchhi-v-clear-all)
+
+"nmap / <Plug>(searchhi-/)
+"nmap ? <Plug>(searchhi-?)
+
+"vmap / <Plug>(searchhi-v-/)
+"vmap ? <Plug>(searchhi-v-?)
+
+
+" Vim asterisk
+let g:asterisk#keeppos = 1
+
+nnoremap <silent> n n:call HLNext(0.1)<cr>
+" Damian Conway's Die Blinkënmatchen: highlight matches
+nnoremap <silent> N N:call HLNext(0.1)<cr>
+
+function! HLNext (blinktime)
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('ErrorMsg', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction
+
+highlight Cursor guifg=red guibg=#D7AF00
+highlight iCursor guifg=black guibg=Gray
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+" swap semicolon and colon
+nnoremap ; :
+nnoremap : ;
+
+
+
+
+
+
+
