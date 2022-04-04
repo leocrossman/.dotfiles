@@ -396,3 +396,10 @@ nnoremap : ;
 
 
 
+
+source ~/.nvim/config/telescope.vim
+
+" Load local config if exists
+if filereadable(expand("~/.nvim/config/local.vim"))
+	source ~/.nvim/config/local.vim
+endif
