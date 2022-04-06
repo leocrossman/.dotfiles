@@ -11,7 +11,12 @@ GroupAdd, ProgramsToSwapCapsLockAndEscape, ahk_exe chrome.exe ; google chrome
 GroupAdd, ProgramsToSwapCapsLockAndEscape, ahk_exe firefox.exe ; firefox developer edition
 GroupAdd, ProgramsToSwapCapsLockAndEscape, ahk_exe WindowsTerminal.exe ; WindowsTerminal
 
+; Uncomment below to remap based on programs
 ; Swap caps lock and escape for any window in the group ProgramsToSwapCapsLockAndEscape
-#IfWinActive, ahk_group ProgramsToSwapCapsLockAndEscape
-	*CapsLock:: Escape
-	Escape:: CapsLock
+;#IfWinActive, ahk_group ProgramsToSwapCapsLockAndEscape
+	;*CapsLock:: Escape
+	;Escape:: CapsLock
+
+; Swap caps lock and escape globally
+  *CapsLock:: Escape
+  Escape:: CapsLock
