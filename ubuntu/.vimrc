@@ -4,10 +4,6 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
-syntax on
-filetype on
-filetype plugin on
-
 set wrap
 set linebreak
 set nolist

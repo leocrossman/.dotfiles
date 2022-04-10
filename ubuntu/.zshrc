@@ -191,7 +191,9 @@ alias mstop="sudo service mongod stop"
 
 alias c="clear"
 alias n="nvim"
-alias so="source .zshrc"
+alias so="source ~/.zshrc"
+
+alias clean_nm="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
 # color stuff
 # alias show_colors="zsh ~/.dotfiles/ubuntu/scripts/zsh/display_terminal_colors.zsh"

@@ -1,1 +1,1 @@
-init.vim
+/home/leoadmin/.config/nvim/init.vim
