@@ -29,3 +29,4 @@ fi
 # disables beep in less i.e. git diff
 export LESS="$LESS -R -Q"
 
+. "$HOME/.cargo/env"
