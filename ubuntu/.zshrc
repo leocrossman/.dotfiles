@@ -149,7 +149,7 @@ alias v="nvim"
 
 # ------------ run these on startup ------------
 # echo $ZSH_THEME
-fortune | cowsay  -f "$(ls /usr/share/cowsay/cows | sort -R | head -1)" | lolcat
+alias say="fortune | cowsay  -f \"$(ls /usr/share/cowsay/cows | sort -R | head -1)\" | lolcat"
 
 unsetopt BEEP
 # Turn off autocomplete beeps
