@@ -342,6 +342,16 @@ alias ttd="tt -n 20 -csv >> ~/wpm.csv"
 # Generate Password
 alias gen_pass="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
 
+alias draft_dir="mkdir drafts && echo '*' > ./drafts/.gitignore"
+
+eval "$(zoxide init zsh)"
+
+fpath+=~/.zfunc
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
