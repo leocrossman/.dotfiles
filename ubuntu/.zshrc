@@ -228,7 +228,7 @@ zstyle ':omz:update' frequency 13
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # Plugins first -> PATH to oh-my-zsh -> source oh-my-zsh.sh
-plugins=(git)
+plugins=(git z npm node 1password colored-man-pages colorize)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -344,7 +344,10 @@ alias gen_pass="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
 
 alias draft_dir="mkdir drafts && echo '*' > ./drafts/.gitignore"
 
+#ZSH_COLORIZE_STYLE="colorful"
+
 eval "$(zoxide init zsh)"
+alias cd="z"
 
 fpath+=~/.zfunc
 
