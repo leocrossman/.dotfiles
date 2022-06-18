@@ -130,3 +130,13 @@ export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g') # strip out problematic 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+
+          # Adding wsl-open as a browser for Bash for Windows
+          if [[ $(uname -r) =~ (m|M)icrosoft ]]; then
+            if [[ -z $BROWSER ]]; then
+              export BROWSER=wsl-open
+            else
+              export BROWSER=$BROWSER:wsl-open
+            fi
+          fi
+          

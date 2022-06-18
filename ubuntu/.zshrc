@@ -346,9 +346,14 @@ alias draft_dir="mkdir drafts && echo '*' > ./drafts/.gitignore"
 
 #ZSH_COLORIZE_STYLE="colorful"
 
-# zoxide -> Better version of `z`
-eval "$(zoxide init zsh)"
-alias cd="z"
+
+#open anything in WSL
+alias eye="xdg-open"
+# open chrome from wsl terminal
+alias open='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
+# symlink chrome into wsl from windows drive
+#sudo ln -s /mnt/c/Program\ Files\ (x86)/Microsoft/Edge/Application/msedge.exe /usr/bin/edge
+#mkdir -p /usr/bin/chrome && ln -sn "/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe" /usr/bin/chrome
 
 fpath+=~/.zfunc
 
@@ -359,3 +364,6 @@ export NVM_DIR="$HOME/.nvm"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+# zoxide -> Better version of `z`
+eval "$(zoxide init zsh)"
+alias cd="z"
