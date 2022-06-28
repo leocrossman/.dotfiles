@@ -344,6 +344,9 @@ alias gen_pass="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
 
 alias draft_dir="mkdir drafts && echo '*' > ./drafts/.gitignore"
 
+# EC2 shortcut
+alias ec2-Mmreal-env="ssh -i ~/.ssh/mm-ec2-key.pem ec2-user@ec2-44-200-245-30.compute-1.amazonaws.com"
+
 #ZSH_COLORIZE_STYLE="colorful"
 
 
