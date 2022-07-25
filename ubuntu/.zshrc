@@ -337,7 +337,7 @@ alias ttr="shuf -n 20 /usr/share/dict/words|tt"
 # Produces a test consisting of a random quote.
 alias ttq="curl http://api.quotable.io/random|jq '[.text=.content|.attribution=.author]'|tt -quotes -"
 # Creates an alias called ttd which keeps a log of progress in your home directory`.
-alias ttd="tt -n 20 -csv >> ~/wpm.csv"
+alias ttd="tt -n 40 -csv >> ~/wpm.csv"
 
 # Generate Password
 alias gen_pass="tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo ''"
